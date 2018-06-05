@@ -8,20 +8,26 @@
 
 /* Begin PBXBuildFile section */
 		4D24077920C4F15200031C22 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D24077820C4F15200031C22 /* AppDelegate.swift */; };
-		4D24077B20C4F15200031C22 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D24077A20C4F15200031C22 /* ViewController.swift */; };
 		4D24077E20C4F15200031C22 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D24077C20C4F15200031C22 /* Main.storyboard */; };
 		4D24078020C4F15200031C22 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D24077F20C4F15200031C22 /* Assets.xcassets */; };
 		4D24078320C4F15200031C22 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D24078120C4F15200031C22 /* LaunchScreen.storyboard */; };
+		4D24078E20C4F71B00031C22 /* MasterTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D24078D20C4F71B00031C22 /* MasterTableViewController.swift */; };
+		4D24079020C4F73100031C22 /* EarthTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D24078F20C4F73100031C22 /* EarthTableViewCell.swift */; };
+		4D24079220C4F74700031C22 /* DataServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D24079120C4F74700031C22 /* DataServices.swift */; };
+		4D24079420C4F75100031C22 /* Earth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D24079320C4F75100031C22 /* Earth.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		4D24077520C4F15200031C22 /* Earthquake.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Earthquake.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D24077820C4F15200031C22 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4D24077A20C4F15200031C22 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		4D24077D20C4F15200031C22 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4D24077F20C4F15200031C22 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4D24078220C4F15200031C22 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4D24078420C4F15200031C22 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4D24078D20C4F71B00031C22 /* MasterTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterTableViewController.swift; sourceTree = "<group>"; };
+		4D24078F20C4F73100031C22 /* EarthTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarthTableViewCell.swift; sourceTree = "<group>"; };
+		4D24079120C4F74700031C22 /* DataServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataServices.swift; sourceTree = "<group>"; };
+		4D24079320C4F75100031C22 /* Earth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Earth.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +60,41 @@
 		4D24077720C4F15200031C22 /* Earthquake */ = {
 			isa = PBXGroup;
 			children = (
+				4D24078C20C4F6FD00031C22 /* Model */,
+				4D24078B20C4F6F600031C22 /* Controller */,
+				4D24078A20C4F6F100031C22 /* View */,
 				4D24077820C4F15200031C22 /* AppDelegate.swift */,
-				4D24077A20C4F15200031C22 /* ViewController.swift */,
 				4D24077C20C4F15200031C22 /* Main.storyboard */,
 				4D24077F20C4F15200031C22 /* Assets.xcassets */,
 				4D24078120C4F15200031C22 /* LaunchScreen.storyboard */,
 				4D24078420C4F15200031C22 /* Info.plist */,
 			);
 			path = Earthquake;
+			sourceTree = "<group>";
+		};
+		4D24078A20C4F6F100031C22 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4D24078F20C4F73100031C22 /* EarthTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4D24078B20C4F6F600031C22 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				4D24078D20C4F71B00031C22 /* MasterTableViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		4D24078C20C4F6FD00031C22 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4D24079120C4F74700031C22 /* DataServices.swift */,
+				4D24079320C4F75100031C22 /* Earth.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,8 +169,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4D24077B20C4F15200031C22 /* ViewController.swift in Sources */,
+				4D24079020C4F73100031C22 /* EarthTableViewCell.swift in Sources */,
 				4D24077920C4F15200031C22 /* AppDelegate.swift in Sources */,
+				4D24079420C4F75100031C22 /* Earth.swift in Sources */,
+				4D24078E20C4F71B00031C22 /* MasterTableViewController.swift in Sources */,
+				4D24079220C4F74700031C22 /* DataServices.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

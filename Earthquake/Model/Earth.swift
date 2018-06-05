@@ -12,12 +12,12 @@ typealias DICT = Dictionary<AnyHashable, Any>
 
 class Earth {
     var properties: [Properties] = []
+    
     init?(dict: DICT) {
-        guard let features = dict["features"] as? DICT else { return nil }
-        guard let properties = features["properties"] as? [DICT] else { return nil }
-        for pro in properties {
-            if let proObject = Properties(dict: pro) {
-                self.properties.append(proObject)
+        guard let features = dict["features"] as? [DICT] else { return nil }
+        for properties in features {
+            if let propertiesObject = Properties(dict: properties) {
+                self.properties.append(propertiesObject)
             }
         }
     }
@@ -27,10 +27,12 @@ struct Properties {
     var mag: Double
     var place: String
     var time: TimeInterval
+    
     init?(dict: DICT) {
-        guard let mag = dict["mag"] as? Double else { return nil }
-        guard let place = dict["place"] as? String else { return nil }
-        guard let time = dict["time"] as? TimeInterval else { return nil }
+        guard let properties = dict["properties"] as? DICT else { return nil }
+        guard let mag = properties["mag"] as? Double else { return nil }
+        guard let place = properties["place"] as? String else { return nil }
+        guard let time = properties["time"] as? TimeInterval else { return nil }
         
         self.mag = mag
         self.place = place

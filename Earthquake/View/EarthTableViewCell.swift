@@ -20,6 +20,7 @@ class EarthTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         mag.layer.cornerRadius = mag.frame.size.width/2
+        mag.layer.masksToBounds = true
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

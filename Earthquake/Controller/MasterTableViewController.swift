@@ -46,8 +46,17 @@ class MasterTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! EarthTableViewCell
         let properties = self.properties[indexPath.row]
         cell.mag.text = String(properties.mag)
-        cell.firstPlace.text = String(properties.place)
-        cell.dateLabel.text = properties.time.getCurrentDateTime(convert: properties.time)
+        let place = String(properties.place)
+        if let index = (place.range(of: "of")?.upperBound) {
+            let firstPlace = String(place.prefix(upTo: index))
+            let secondPlace = String(place.suffix(from: index))
+            
+            cell.firstPlace.text = firstPlace
+            cell.secondPlace.text = secondPlace
+        }
+        
+        cell.dateLabel.text = properties.time.getCurrentDate(convert: properties.time)
+        cell.timeLabel.text = properties.updated.getCurrentTime(convert: properties.updated)
         return cell
     }
     

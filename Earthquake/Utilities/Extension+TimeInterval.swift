@@ -9,10 +9,10 @@
 import UIKit
 
 extension TimeInterval {
-    func getCurrentDateTime(convert dateTimeInterval: TimeInterval) -> String{
+    func getCurrentDate(convert dateTimeInterval: TimeInterval) -> String{
         let formater = DateFormatter()
         // lay thu tư TimeInterval
-        formater.dateFormat = "EEEE, MMMM, dd, yyyy HH:mm a"
+        formater.dateFormat = "MMMM dd, yyyy"
         // chuyen doi thanh tieng viet
 //        formater.locale = Locale(identifier: "vi-VN")
         // lay gio he thong
@@ -22,4 +22,19 @@ extension TimeInterval {
         return currentDate == today ? today : today
         
     }
+    
+    func getCurrentTime(convert dateTimeInterval: TimeInterval) -> String{
+        let formater = DateFormatter()
+        // lay thu tư TimeInterval
+        formater.dateFormat = "HH:mm a"
+        // chuyen doi thanh tieng viet
+        //        formater.locale = Locale(identifier: "vi-VN")
+        // lay gio he thong
+        let today = formater.string(from: Date(timeIntervalSince1970: dateTimeInterval))
+        let date = Date()
+        let currentDate = formater.string(from: date)
+        return currentDate == today ? today : today
+        
+    }
+
 }
